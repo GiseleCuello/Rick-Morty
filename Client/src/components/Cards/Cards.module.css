@@ -1,0 +1,15 @@
+.container{
+display: grid;
+grid-template-columns: repeat(4, 23em);
+justify-items: center;
+justify-self: center;
+align-items: center;
+justify-content: center;
+align-content: center;
+
+}
+
+
+  
+  
+  

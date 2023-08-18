@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../../get_schwifty.ttf') format('truetype');
+  }
+
+.contenedor{
+    display: grid;
+grid-template-columns: repeat(2, 40em);
+justify-items: center;
+justify-self: center;
+align-items: center;
+justify-content: center;
+align-content: center;
+}
+
+.pag{
+    border: solid  rgb(43, 255, 0) 0.1em;
+    border-radius: 1em;
+    color: white;
+    font-weight: bold;
+    padding: 2em;
+    height: 30em;
+    width: 20em;
+    margin: 1em;
+    background-color: black;
+    background-image: url('../../Assets/rick\ form.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.yo{
+    border: solid  rgb(43, 255, 0) 0.1em;
+    border-radius: 1em;
+    color: white;
+    font-weight: bold;
+    padding: 2em;
+    height: 30em;
+    width: 20em;
+    margin: 1em;
+    background-color: black;
+    background-image: url('../../Assets/rick\ form.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.titulo{
+    color: lightskyblue;
+    font-family: 'MiFuente';
+    font-size: 3em;
+}

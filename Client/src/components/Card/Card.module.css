@@ -1,0 +1,70 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 2em;
+    height: 20em;
+    width: 10em;
+    margin: 1em;
+    float: left;
+    position: relative; 
+    border: solid  rgb(43, 255, 0) 0.1em;
+    border-radius: 1em;
+    }
+
+
+.imagen{
+    border: 0.1em solid black;
+    height: 10em;
+    width: 10em;
+    border-radius: 70%;
+    box-shadow: 9px 9px 42px 0px rgba(174,235,179,0.75);
+-webkit-box-shadow: 9px 9px 42px 0px rgba(174,235,179,0.75);
+-moz-box-shadow: 9px 9px 42px 0px rgba(174,235,179,0.75);
+
+}
+
+.nombreEncima{
+    font-size: 2em;
+    background-color: black;
+    color: lightskyblue;
+  position: relative;
+  top: 1em;
+}
+  .animate__animated.animate__bounce {
+    --animate-duration: 2s;
+  }
+  :root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+  }
+
+
+.Link{
+    text-decoration: none;
+}
+
+.btn{
+  position:absolute;
+  bottom: 26em;
+  right: 13em;
+  border-radius: 1em;
+  background-color: black;
+  color:bisque;
+}
+.btn:hover{
+  background-color: rgb(37, 37, 37);
+}
+.btnClose{
+  position:absolute;
+  bottom: 26em;
+  left: 14em;
+  border-radius: 1em;
+  background-color: black;
+  color:bisque;
+}
+.btnClose:hover{
+  background-color: rgb(37, 37, 37);
+}

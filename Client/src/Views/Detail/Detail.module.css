@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'MiFuente';
+    src: url('../../get_schwifty.ttf') format('truetype');
+  }
+
+.contenedor {
+   position: absolute;
+   left: 30em;
+    padding: 2em;
+    height: 20em;
+    width: 33em;
+    margin-top: 5em;
+    float: left; 
+    border: solid  rgb(43, 255, 0) 0.1em;
+    border-radius: 1em;
+    background-color: black;
+    }
+
+.txt{
+    display: block;
+    color: bisque;
+    position: absolute;
+    top: 9em;
+    left: 1em;
+    font-size: 1.3em;
+    line-height: 0.2em;
+    text-align: left;
+    
+}
+
+.imagen{
+    border: 0.1em solid black;
+    height: 15em;
+    width: 15em;
+    border-radius: 70%;
+    box-shadow: 9px 9px 42px 0px rgba(174,235,179,0.75);
+-webkit-box-shadow: 9px 9px 42px 0px rgba(174,235,179,0.75);
+-moz-box-shadow: 9px 9px 42px 0px rgba(174,235,179,0.75);
+position: absolute;
+top: 2.5em;
+right: 2.5em;
+}
+
+.Link{
+color:rgb(43, 255, 0);
+text-decoration: none;
+font-size: 2em;
+position: absolute;
+bottom: 0.2em;
+right: 0.5em;
+}
+
+.Link:hover{
+    color: lightskyblue;
+}
+
+.nombre{
+position: absolute;
+bottom: 5.5em;
+font-size: 3em;
+font-family: 'MiFuente';
+color: lightskyblue;
+}
