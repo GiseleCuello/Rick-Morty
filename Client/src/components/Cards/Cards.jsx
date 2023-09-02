@@ -1,5 +1,4 @@
 import Card from '../Card/Card.jsx';
-import Style from './Cards.module.css';
 import 'animate.css';
 
 export default function Cards({characters, onClose}) {

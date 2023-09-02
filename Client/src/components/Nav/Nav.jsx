@@ -21,14 +21,14 @@
           <Link className={Style.link} to="/About">
           <button className={`${Style.Btn} ${Style['glow-on-hover']}`}>About</button>
           </Link>
-            <Link className={Style.link}>
-              <button className={`${Style.Btn} ${Style['glow-on-hover']}`} onClick={logout}>
-                <div>Logout</div>
-              </button>
-            </Link>
             <Link className={Style.link} to="/Favorites">
               <button className={`${Style.Btn} ${Style['glow-on-hover']}`}>
                 <div>Favorites</div>
+              </button>
+            </Link>
+            <Link className={Style.link}>
+              <button className={`${Style.Btn} ${Style['glow-on-hover']}`} onClick={logout}>
+                <div>Logout</div>
               </button>
             </Link>
           </div>

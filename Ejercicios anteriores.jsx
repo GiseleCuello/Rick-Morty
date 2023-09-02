@@ -169,4 +169,53 @@ export const removeFav = (id) => {
       });
    };
 };
+-------------------------------------------------------------------------------------------------
+DB
+
+HandleFavorite.js
+let myFavorites = [];
+
+const postFav = (req,res) => {
+    // let {id} = req.body
+    // const findRepeat = myFavorites.find(char => char.id === id)
+    // if(findRepeat){
+    //     return res.status(400).json("El personaje ya está en favoritos")
+    // }
+    myFavorites.push(req.body)
+    res.json(myFavorites)
+} // ver si vienen repetidos con .find
+
+const deleteFav = (req, res) => {
+   const {id} = req.params; // siempre viene string
+   const filtered = myFavorites.filter(fav => fav.id !== Number(id))
+   myFavorites = filtered
+   res.json(myFavorites)
+}
+
+
+
+module.exports = { postFav, deleteFav, myFavorites};
+
+Login.js
+
+const users = require('../utils/users')
+const login = (req, res) => {
+    const { email, password } = req.query
+    let access = false;
+
+   users.forEach(user => {
+    if (user.email === email && user.password === password) {
+        access = true
+    }
+    
+   });
+   res.json({access})
+}
+
+module.exports = login;
+
+carpeta Utils arch user.js
+
+module.exports = [{email: 'gisele@mail.com', password: 'gisele321'}]
+------------------------------------------------------------------------------------------------------
 */

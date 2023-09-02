@@ -2,16 +2,32 @@ import './App.css';
 import Nav from './components/Nav/Nav.jsx';
 import Cards from './components/Cards/Cards.jsx';
 import {useState, useEffect} from 'react';
+import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
 import { Route, Routes , useNavigate, useLocation} from 'react-router-dom';
 import About from './Views/About/About';
 import Detail from './Views/Detail/Detail';
 import Landing from './Views/Landing/Landing';
 import Favorites from './components/Favorites/Favorites';
+import { logOut, loginState } from './Redux/Actions';
 
 function App() {
-   const[characters, setCharacters] = useState([]);
+  const dispatch = useDispatch();
+  
+  const access  = useSelector((state) => state.access);
+  const login = async (userData) => {
+    try {
+      const { email, password } = userData;
 
+      //*Envío datos por QUERY
+      dispatch(loginState(email, password));
+      access ? navigate("/home") : alert("¡Datos incorrectos!");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
+  const [characters, setCharacters] = useState([]);
 
      const onSearch = async (id) => {
       try{
@@ -39,8 +55,7 @@ function App() {
       //const shouldShowNav = window.location.pathname !== '/'; {shouldShowNav && <Nav onSearch={onSearch} />}
 
       const navigate = useNavigate();
-      const [access, setAccess] = useState(false);
-      
+        
       
       
 useEffect(() => {
@@ -49,26 +64,26 @@ useEffect(() => {
 
 
 
-const login = async (userData) => {
-   try{
-      const { email, password } = userData;
-      const URL = 'http://localhost:3001/rickandmorty/login/';
-      const {data} = await axios( `${URL}?email=${email}&password=${password}`)
-      const { access } = data;
-      setAccess(access);
-      access ? navigate('/Home') : alert("Usuario o contraseña incorrectos");
-      } 
-   catch (error){
-       alert(error)
-      }
-   }
+// const login = async (userData) => {
+//    try{
+//       const { email, password } = userData;
+//       const URL = 'http://localhost:3001/rickandmorty/login/';
+//       const {data} = await axios( `${URL}?email=${email}&password=${password}`)
+//       const { access } = data;
+//       setAccess(access);
+//       access ? navigate('/Home') : alert("Usuario o contraseña incorrectos");
+//       } 
+//    catch (error){
+//        alert(error)
+//       }
+//    }
 
 
 
-function handleLogOut  () {
-   setAccess(false);
-   navigate('/')
- }
+function handleLogOut() {
+  dispatch(logOut());
+  navigate('/');
+}
 
 // Obtener la ubicación actual
 const location = useLocation();

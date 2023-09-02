@@ -11,13 +11,10 @@ function Card({name, status, species, gender, origin, image, onClose, id, addFav
 
    const [isFav, setIsFav] = useState(false)
 
-useEffect(() => {
-   myFavorites.forEach((fav) => {
-      if (fav.id === id) {
-         setIsFav(true);
-      }
-   });
-}, [myFavorites, id]);
+   useEffect(() => {
+      const isCharacterFav = myFavorites.some((fav) => fav.id === id);
+      setIsFav(isCharacterFav);
+    }, [myFavorites, id]);
 
 const handleFavorite = () => {
    if(isFav){

@@ -1,17 +1,22 @@
-import React, { useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Card from "../Card/Card";
-import { orderCards, filterCards } from "../../Redux/Actions";
+import { orderCards, filterCards, getFav } from "../../Redux/Actions";
 import style from "./Favorites.module.css";
 
 
 function Favorites() {
-
-  const myFavorites = useSelector (state => state.myFavorites);
-
+  const myFavorites = useSelector((state) => state.myFavorites);
+ 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getFav());
+  }, [dispatch]);
+
   const[aux, setAux] = useState(false);
   
+
   const handleOrder = (event) =>{
     setAux(!aux);
     dispatch(orderCards(event.target.value))

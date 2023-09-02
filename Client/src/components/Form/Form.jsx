@@ -1,6 +1,8 @@
 import { useState } from "react";
 import validate from "./Validate"
 import Style from './Form.module.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'
+
 
 const Form = ({Login}) => {
     const [userData, setUserData] = useState({
@@ -48,7 +50,9 @@ const Form = ({Login}) => {
                 value={userData.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
+            
                 />
+                
             </div>
             <div className={Style.inputbox}>
                 <label htmlFor="password">Password</label>
@@ -59,7 +63,9 @@ const Form = ({Login}) => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 />
-                
+            <span onClick={verPassword} className="ver-password">
+              {passwordShown ? <FaEye /> : <FaEyeSlash />}
+            </span>            
             </div>
             {errors.password && (<p> {errors.password} </p>)}
             <div>
@@ -69,5 +75,5 @@ const Form = ({Login}) => {
         </div>
     )
 }
-
+        
 export default Form;
